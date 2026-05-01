@@ -1,114 +1,179 @@
-# Full-Stack Social Media Application
+# 🌐 Social Networking Platform
 
-## Overview
+> A Full-Stack Social Media Web Application built from scratch using **Java Spring Boot** (Backend) and **React** (Frontend) — with real-time chat, reels, stories, and much more.
 
-The Full-Stack Social Media Application is a web-based platform built using Spring Boot for the backend and React for the frontend. This application provides a comprehensive solution for users to interact with each other through various social features including user authentication, posting, commenting, liking, adding stories, real-time chatting, and more. The backend is implemented using Spring Boot with WebSocket support for real-time communication, while the frontend is developed using React with Redux for state management.
+![Java](https://img.shields.io/badge/Java-17-orange?style=for-the-badge&logo=java)
+![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.0-green?style=for-the-badge&logo=springboot)
+![React](https://img.shields.io/badge/React-18-blue?style=for-the-badge&logo=react)
+![MySQL](https://img.shields.io/badge/MySQL-8.0-blue?style=for-the-badge&logo=mysql)
+![JWT](https://img.shields.io/badge/JWT-Auth-red?style=for-the-badge&logo=jsonwebtokens)
 
-## Images of the application
+---
 
-<img src="https://media.licdn.com/dms/image/D562DAQGH956QITX3bw/profile-treasury-image-shrink_1280_1280/0/1713162198603?e=1713769200&v=beta&t=X5Lu53Fy_nGJakkNJuUy3K6p7ezLnQiV0w2DKx4V2lM" />
-<img src="https://media.licdn.com/dms/image/D562DAQEMppb-yGrHSQ/profile-treasury-image-shrink_800_800/0/1713162179008?e=1713769200&v=beta&t=e3C4GLoQ1H0YNG7UoUtvKkmEpjVlV8tGQ6iDB87aETc" />
+## ✨ Features
 
-## Backend Dependencies (Spring Boot)
+| Feature | Description |
+|---|---|
+| 🔐 **User Authentication** | Secure JWT-based login & registration |
+| 📰 **Posts & Feed** | Create, edit, and delete posts |
+| 💬 **Comments & Likes** | Engage with posts |
+| 📖 **Stories** | Short-lived 24-hour visual stories |
+| 🎬 **Reels** | Upload and share short video clips |
+| 👥 **Follow / Unfollow** | Follow other users for updates |
+| 💬 **Real-time Chat** | WebSocket-powered live messaging |
+| 👤 **Profile Page** | View and edit user profiles |
 
-### Project Structure
-- **springboot-social**: Backend project directory.
+---
 
-### Maven Dependencies
-- **spring-boot-starter-websocket**: Provides WebSocket support for real-time communication.
-- **spring-boot-starter-data-jdbc**: Starter for JDBC-based data access.
-- **spring-boot-starter-data-jpa**: Starter for using Spring Data JPA with Hibernate.
-- **spring-boot-starter-web**: Starter for building web, including RESTful, applications using Spring MVC.
-- **spring-boot-starter-security**: Starter for using Spring Security.
-- **spring-boot-devtools**: Provides development-time support for reloading changes.
-- **mysql-connector-j**: MySQL JDBC driver for database connectivity.
-- **lombok**: Library to reduce boilerplate code.
-- **jjwt-api**: API for JSON Web Tokens (JWT) support.
-- **jjwt-impl**: Implementation of JWT for token generation and parsing.
-- **jjwt-jackson**: Jackson implementation for JSON processing with JWT.
-- **spring-boot-starter-test**: Starter for testing Spring Boot applications.
+## 🛠️ Tech Stack
 
-### Maven Plugins
-- **spring-boot-maven-plugin**: Plugin for running Spring Boot applications from Maven.
+### Backend
+- **Java 17** + **Spring Boot**
+- **Spring Security** + **JWT** for authentication
+- **Spring Data JPA** + **Hibernate**
+- **WebSocket** for real-time communication
+- **MySQL** as the database
+- **Maven** as build tool
+- **Lombok** to reduce boilerplate
 
-## Frontend Dependencies (React)
+### Frontend
+- **React 18** + **Vite**
+- **Redux Toolkit** for state management
+- **Material UI (MUI)** for UI components
+- **Tailwind CSS** for styling
+- **Axios** for API calls
+- **STOMP + SockJS** for WebSocket
+- **Formik + Yup** for form validation
 
-### Project Structure
-- **client**: Frontend project directory.
+---
 
-### NPM Dependencies
-- **@emotion/react** & **@emotion/styled**: CSS-in-JS library for styling components.
-- **@mui/icons-material** & **@mui/material**: Material-UI components library for UI design.
-- **@reduxjs/toolkit**: Redux toolkit for state management.
-- **@stomp/stompjs**: STOMP protocol library for WebSocket communication.
-- **axios**: Promise-based HTTP client for making API requests.
-- **formik**: Form library for React forms validation.
-- **react**, **react-dom**: Core React libraries.
-- **react-redux**: Official React bindings for Redux.
-- **react-router-dom**: DOM bindings for React Router.
-- **react-stomp**: React library for STOMP protocol.
-- **redux**, **redux-thunk**: State management libraries for React.
-- **sockjs-client**, **stompjs**: JavaScript libraries for WebSocket communication.
-- **yup**: JavaScript schema builder for form validation.
+## 📁 Project Structure
 
-### Dev Dependencies
-- **@types/react** & **@types/react-dom**: TypeScript types for React.
-- **@vitejs/plugin-react**: Vite plugin for React support.
-- **autoprefixer**, **postcss**, **tailwindcss**: CSS preprocessing tools.
-- **eslint** & **eslint-plugin-react**: Linting tools for JavaScript and React code.
-- **eslint-plugin-react-hooks**, **eslint-plugin-react-refresh**: ESLint plugins for React hooks and refresh.
-- **vite**: Next-generation frontend tooling for React.
+```
+Social-Networking-Platform/
+├── springboot-social/          # Backend - Spring Boot
+│   ├── src/
+│   │   ├── main/java/com/.../
+│   │   │   ├── controllers/    # REST Controllers
+│   │   │   ├── services/       # Business Logic
+│   │   │   ├── models/         # Entity Classes
+│   │   │   ├── repositories/   # Database Layer
+│   │   │   └── security/       # JWT & Auth
+│   │   └── resources/
+│   │       └── application.properties
+│   └── pom.xml
+│
+└── client/                     # Frontend - React
+    ├── src/
+    │   ├── components/
+    │   ├── pages/
+    │   ├── redux/
+    │   └── App.jsx
+    └── package.json
+```
 
-## Features
+---
 
-- **User authentication**: JWT-based login and registration.
-- **Posting**: Create, edit, and delete posts.
-- **Commenting**: Add comments to posts.
-- **Liking**: Like and unlike posts.
-- **Adding Stories**: Share short-lived visual stories.
-- **Real-time chatting**: Chat with other users in real-time using WebSocket.
-- **Reels**: Upload and share short video clips (Reels).
-- **Profile page**: View and edit user profiles.
-- **Follow user**: Follow and unfollow other users for updates.
+## ⚙️ Getting Started
 
-## Database
+### Prerequisites
+- Java 17+
+- Node.js 18+
+- MySQL 8.0+
+- Maven 3.8+
 
-The application uses MySQL as the relational database management system. Spring Data JPA is utilized for easy and efficient data access and manipulation.
+### 🔧 Backend Setup
 
-## Setup
+```bash
+# 1. Navigate to backend folder
+cd springboot-social
 
-1. **Backend Setup**:
-   - Navigate to the `springboot-social` directory.
-   - Run `mvn spring-boot:run` to start the Spring Boot backend.
+# 2. Configure MySQL in application.properties
+spring.datasource.url=jdbc:mysql://localhost:3306/socialdb
+spring.datasource.username=your_username
+spring.datasource.password=your_password
 
-2. **Frontend Setup**:
-   - Navigate to the `client` directory.
-   - Run `npm install` to install frontend dependencies.
-   - Run `npm run dev` to start the React frontend.
+# 3. Run the backend
+mvn spring-boot:run
+```
+Backend runs at: `http://localhost:8080`
 
-3. **Database Configuration**:
-   - Ensure MySQL is installed and running.
-   - Configure database connection properties in `application.properties` file.
-   - Run provided SQL scripts to create necessary tables and populate initial data.
+### 💻 Frontend Setup
 
-## Usage
+```bash
+# 1. Navigate to frontend folder
+cd client
 
-Upon launching the application, users can perform various social interactions such as:
-- Login and register for an account.
-- Create, edit, and delete posts.
-- Comment on posts and like them.
-- Share short-lived visual stories.
-- Upload and share short video clips (Reels).
-- View and edit user profiles.
-- Follow and unfollow other users.
-- Chat with other users in real-time.
+# 2. Install dependencies
+npm install
 
-## Contribution
+# 3. Start the frontend
+npm run dev
+```
+Frontend runs at: `http://localhost:5173`
 
-We welcome contributions from the community to enhance the functionality and usability of the Full-Stack Social Media Application. If you're interested in contributing, please follow the steps below:
+---
 
-1. Fork the repository.
-2. Create your feature branch (`git checkout -b feature/YourFeature`).
-3. Commit your changes (`git commit -am 'Add some feature'`).
-4. Push to the branch (`git push origin feature/YourFeature`).
-5. Create a new Pull Request.
+## 📡 API Endpoints
+
+### Auth
+| Method | Endpoint | Description |
+|---|---|---|
+| POST | `/api/auth/register` | Register new user |
+| POST | `/api/auth/login` | Login & get JWT |
+
+### Posts
+| Method | Endpoint | Description |
+|---|---|---|
+| GET | `/api/posts` | Get all posts |
+| POST | `/api/posts` | Create a post |
+| PUT | `/api/posts/{id}` | Edit a post |
+| DELETE | `/api/posts/{id}` | Delete a post |
+
+### Social
+| Method | Endpoint | Description |
+|---|---|---|
+| POST | `/api/users/{id}/follow` | Follow a user |
+| POST | `/api/users/{id}/unfollow` | Unfollow a user |
+| POST | `/api/posts/{id}/like` | Like a post |
+| POST | `/api/posts/{id}/comments` | Comment on a post |
+
+### Reels & Stories
+| Method | Endpoint | Description |
+|---|---|---|
+| POST | `/api/reels` | Upload a reel |
+| GET | `/api/reels` | Get all reels |
+| POST | `/api/stories` | Create a story |
+| GET | `/api/stories` | Get active stories |
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome!
+
+```bash
+# Fork the repo, then:
+git checkout -b feature/YourFeature
+git commit -m "Add YourFeature"
+git push origin feature/YourFeature
+# Open a Pull Request
+```
+
+---
+
+## 👨‍💻 Author
+
+**Varun Kaushik**
+- 🎓 B.Tech Engineering Student
+- 💻 GitHub: [@curiousvarun](https://github.com/curiousvarun)
+
+---
+
+## 📄 License
+
+This project is open source and available under the [MIT License](LICENSE).
+
+---
+
+⭐ **If you like this project, please give it a star — it motivates me to build more!**
